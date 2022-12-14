@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* cursor: url('images/cursor.png'), default; */
+    height: 100vh;
+    background-color: rgb(192, 200, 109);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game-section {
+
+    background-image: url("./images/background.png");
+    background-repeat: no-repeat;
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.worm-box {
+    width: 1600px;
+}
+
+.worm-container {
+    width: 5%;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+}
+
+.mole-container {
+    width: 24%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mole-div {
+    background-color: black;
+    width: 265px;
+    height: 256px;
+    border-radius: 50%;
+}
+
+.mole {
+    position: relative;
+    right: 30px;
+}
