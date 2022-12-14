@@ -2,109 +2,121 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Star Moles!</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
   </head>
+
   <body>
-    <section class="game-section">
+    <section class="bg">
       <div class="worm-box">
-        <div class="worm-container">
-          <img src="./images/worm.png" alt="" / class="worm meter">
+        <div style="width: 5%" class="worm-container">
+          <img class="worm" src="./images/worm.png" alt="worm meter" />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-0">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="0"
+            src="./images/king-mole-hungry.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-1">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="1"
+            src="./images/king-mole-fed.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-2">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="2"
+            src="./images/king-mole-hungry.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-3">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="3"
+            src="./images/king-mole-sad.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-4">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="4"
+            src="./images/king-mole-leaving.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-5">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="5"
+            src="./images/mole-hungry.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-6">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="6"
+            src="./images/mole-fed.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-7">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="7"
+            src="./images/mole-sad.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-8">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="8"
+            src="./images/mole-leaving.png"
+            alt="mole"
+            class="mole"
           />
         </div>
       </div>
-      <div class="mole-container">
-        <div class="mole-div">
+      <div class="hole-container">
+        <div class="hole" id="hole-9">
           <img
-            src="images/mole-hungry.png"
-            alt="mole image"
-            class="mole hungry"
+            data-index="9"
+            src="./images/king-mole-hungry.png"
+            alt="happy mole"
+            class="mole"
           />
         </div>
       </div>
     </section>
+    <img class="win" src="win.png" alt="mole" />
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

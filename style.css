@@ -1,35 +1,61 @@
-*,
-*::after,
-*::before {
+* {
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    /* cursor: url('images/cursor.png'), default; */
-    height: 100vh;
-    background-color: rgb(192, 200, 109);
+    cursor: url(./images/cursor.png), default;
+    background-color: #c0c86d;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
-.game-section {
-
-    background-image: url("./images/background.png");
+.bg {
+    background-image: url(./images/background.png);
     background-repeat: no-repeat;
     width: 1920px;
     height: 1080px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.worm-box {
-    width: 1600px;
+.hole {
+    background: black;
+    border-radius: 50%;
+    overflow: visible;
+    width: 267px;
+    height: 267px;
+}
+
+.hole-container {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mole {
+    position: relative;
+    right: 30px;
+}
+
+.hungry {
+    cursor: url(./images/cursor-worm.png), pointer;
+}
+
+.gone {
+    display: none;
+}
+
+.worm {
+    width: 1660px;
 }
 
 .worm-container {
@@ -38,21 +64,20 @@ body {
     transition: width 0.5s ease-in-out;
 }
 
-.mole-container {
-    width: 24%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.worm-box {
+    width: 1660px;
 }
 
-.mole-div {
-    background-color: black;
-    width: 265px;
-    height: 256px;
-    border-radius: 50%;
+.win {
+    max-width: 100vw;
+    max-height: 100vh;
+    display: none;
 }
 
-.mole {
-    position: relative;
-    right: 30px;
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
