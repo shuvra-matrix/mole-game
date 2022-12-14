@@ -1,4 +1,8 @@
 let score = 0;
+const maxScore = 20;
+
+const starttime = Date.now();
+let endtime = 0;
 
 function getSadInterval() {
   return Date.now() + 1000;
@@ -154,10 +158,14 @@ function feed(event) {
     moles.node.children[0].src = "./images/mole-fed.png";
     score++;
   }
-  if (score >= 10) {
+  if (score >= maxScore) {
+    let timenow = Date.now();
+    endtime = Math.round((timenow - starttime) / 1000);
+    document.querySelector(".timer").textContent = `Time : ${endtime}S`;
+    document.querySelector(".timer").classList.remove("hide");
     win();
   }
-  document.querySelector(".worm-container").style.width = `${10 * score}%`;
+  document.querySelector(".worm-container").style.width = `${5 * score}%`;
 }
 
 function win() {
