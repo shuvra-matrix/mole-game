@@ -1,3 +1,5 @@
+let score = 0;
+
 function getSadInterval() {
   return Date.now() + 1000;
 }
@@ -8,6 +10,10 @@ function getGoneInterval() {
 
 function getHungryInterval() {
   return Date.now() + Math.floor(Math.random() * 3000) + 2000;
+}
+
+function getKingStatus() {
+  return Math.random() > 0.9;
 }
 
 const mole = [
@@ -78,7 +84,12 @@ function getNextStatus(mole) {
     case "sad":
       mole.next = getSadInterval();
       mole.status = "leaving";
-      mole.node.children[0].src = "./images/mole-leaving.png";
+      if (mole.king) {
+        mole.node.children[0].src = "./images/king-mole-leaving.png";
+      } else {
+        mole.node.children[0].src = "./images/mole-leaving.png";
+      }
+
       break;
     case "leaving":
       mole.next = getGoneInterval();
@@ -88,20 +99,34 @@ function getNextStatus(mole) {
     case "gone":
       mole.next = getHungryInterval();
       mole.status = "hungry";
+      mole.king = getKingStatus();
       mole.node.children[0].classList.add("hungry");
       mole.node.children[0].classList.remove("gone");
-      mole.node.children[0].src = "./images/mole-hungry.png";
+      if (mole.king) {
+        mole.node.children[0].src = "./images/king-mole-hungry.png";
+      } else {
+        mole.node.children[0].src = "./images/mole-hungry.png";
+      }
       break;
     case "hungry":
       mole.status = "sad";
       mole.node.children[0].classList.remove("hungry");
       mole.next = getSadInterval();
-      mole.node.children[0].src = "./images/mole-sad.png";
+      if (mole.king) {
+        mole.node.children[0].src = "./images/king-mole-sad.png";
+      } else {
+        mole.node.children[0].src = "./images/mole-sad.png";
+      }
+
       break;
     case "feed":
       mole.next = getSadInterval();
       mole.status = "leaving";
-      mole.node.children[0].src = "./images/mole-leaving.png";
+      if (mole.king) {
+        mole.node.children[0].src = "./images/king-mole-leaving.png";
+      } else {
+        mole.node.children[0].src = "./images/mole-leaving.png";
+      }
       break;
   }
 }
@@ -119,9 +144,25 @@ function feed(event) {
 
   moles.status = "feed";
   moles.next = getSadInterval();
-  moles.node.children[0].src = "./images/mole-fed.png";
+
   moles.node.children[0].classList.remove("hungry");
   moles.next = getSadInterval();
+  if (mole.king) {
+    moles.node.children[0].src = "./images/king-mole-fed.png";
+    score += 2;
+  } else {
+    moles.node.children[0].src = "./images/mole-fed.png";
+    score++;
+  }
+  if (score >= 10) {
+    win();
+  }
+  document.querySelector(".worm-container").style.width = `${10 * score}%`;
+}
+
+function win() {
+  document.querySelector(".bg").classList.add("hide");
+  document.querySelector(".win").classList.remove("hide");
 }
 
 let runAgainAt = Date.now();
